@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>All Services</title>
+</head>
+<body>
+
+	<form action="searchServices" method="GET">
+		<input placeholder="service Id" type="number" name="id" />&nbsp;
+		<button type="submit">Search</button>
+	</form><br><br>
+
+	<table th:unless=${specificService} border="1" style="background: lightblue;">
+		<thead>
+			<tr>
+				<th>Service Id</th>
+				<th>Service Name</th>
+				<th>Charge</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="service:${services}">
+				<td th:text="${service.id}"></td>
+				<td th:text="${service.service_name}"></td>
+				<td th:text=${service.fees}></td>
+			</tr>
+		</tbody>
+	</table>
+	<table th:if=${specificService} border="1" style="background: lightblue;">
+		<thead>
+			<tr>
+				<th>Service Id</th>
+				<th>Service Name</th>
+				<th>Charge</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${specificService.id}"></td>
+				<td th:text="${specificService.service_name}"></td>
+				<td th:text=${specificService.fees}></td>
+			</tr>
+		</tbody>
+	</table><br>
+	
+	<button onClick="window.location.href='/serviceForm';">Add Services</button>
+	
+</body>
+</html>

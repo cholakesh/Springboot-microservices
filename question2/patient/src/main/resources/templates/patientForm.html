@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add New Patients</title>
+</head>
+<body>
+	<h1>----Add new patients data----</h1><br>
+	<form action="savePatients" method="post">
+		<label for="id">Patient Id: </label><input type="number" id="id" name="id" required/><br><br>
+		<label for="fname">Patient First Name: </label><input type="text" id="fname" name="fname" required/><br><br>
+		<label for="lname">Patient Last Name: </label><input type="text" id="lname" name="lname" required/><br><br>
+		
+		<label for="services">Services:</label>
+        <!--<select id="services" name="services" multiple>
+            <option th:each="service : ${services}" th:value="${service}" th:text="${service.service_name}"></option>
+        </select>-->
+        
+		<fieldset >
+            <legend>Services:</legend>
+            <input th:each="service:${services}" th:text="${service.service_name}" type="checkbox" name="services" th:value="${service.id}">
+            <br/>
+        </fieldset>
+
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
