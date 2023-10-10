@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>All Patients</title>
+</head>
+<body>
+
+	<form action="searchPatients" method="GET">
+		<input placeholder="Patient Id" type="number" name="id" />&nbsp;
+		<button type="submit">Search</button>
+	</form><br><br>
+
+	<table th:unless=${specificPatient} border="1" style="background: lightblue;">
+		<thead>
+			<tr>
+				<th>Patient Id</th>
+				<th>Patient Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="patient:${patients}">
+				<td th:text="${patient.id}"></td>
+				<td th:text="${patient.firstName}+' '+${patient.lastName}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table th:if=${specificPatient} border="1" style="background: lightblue;">
+		<thead>
+			<tr>
+				<th>Patient Id</th>
+				<th>Patient Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${specificPatient.id}"></td>
+				<td th:text="${specificPatient.firstName}+' '+${specificPatient.lastName}"></td>
+			</tr>
+		</tbody>
+	</table><br>
+	
+	<button onClick="window.location.href='/patientForm';">Add patients</button>
+</body>
+</html>
