@@ -1,0 +1,12 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: services management
+
+eureka:
+  client:
+    service-url: 
+      deafultZone: "http://localhost:8761/eureka"
+      

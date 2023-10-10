@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "resilience4j.circuitbreaker.instances.service-detail",
+      "type": "com.wipro.patient.config.SampleDataConfig",
+      "sourceType": "com.wipro.patient.config.SampleDataConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
