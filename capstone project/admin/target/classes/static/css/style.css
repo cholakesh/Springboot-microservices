@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.content{
+	background-color: lightgreen;
+	text-align: center;
+	padding:20px 50px 50px 50px;
+	margin:auto;
+}

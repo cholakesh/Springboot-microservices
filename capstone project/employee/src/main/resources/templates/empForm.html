@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration form</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+	<div class="content">
+		<h1>Fill the below details</h1>
+		<form action="saveEmpDetails" method="post">
+			<label for="userName" class="inline-label">User Name : </label><p class="inline-label" id="userName" th:text="${userName}"></p><br><br>
+			<label for="assessment">Assessment : </label>
+			<select name="selectedOption" required>
+				<option  th:each="tech:${techs}" th:value="${tech}" th:text="${tech}"></option>
+			</select><br><br>
+			<label for="date">Date : </label><input type="date" id="date" name="date" required/><br><br>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+</body>
+</html>

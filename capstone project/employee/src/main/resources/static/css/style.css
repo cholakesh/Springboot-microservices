@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.content{
+	background-color: lightblue;
+	text-align: center;
+	width:550px;
+	height:auto;
+	padding:10px 80px 80px 50px;
+	margin:auto;
+}
+
+.content1{
+	background-color: lightgreen;
+	text-align: center;
+	padding:20px 50px 50px 50px;
+	margin:auto;
+}
+
+.inline-label{
+	display: inline;
+}
